@@ -7,11 +7,7 @@ export default abstract class Validator<T> {
     let result = true;
     let error;
 
-    if (
-      required &&
-      required.length &&
-      !this.isFieldsPresent(required, body)
-    ) {
+    if (required && required.length && !this.isFieldsPresent(required, body)) {
       result = false;
       error = new Error(`The fields "${required.join('", "')}" are required!`);
     }
