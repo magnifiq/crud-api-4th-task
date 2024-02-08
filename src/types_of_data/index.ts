@@ -10,7 +10,7 @@ export interface ResponseError extends Error {
   message: string;
 }
 
-export interface IncomingBody {
+export interface Content {
   body?: ClientSchema;
   params?: object;
 }
