@@ -44,7 +44,7 @@ function parseUrl(urlString: string | undefined): [string, string] {
     let sanitizedUrl = parsedUrl.pathname as string;
     sanitizedUrl = sanitizedUrl.replace(/^\/+|\/+$/g, "");
 
-    Object.keys(routes).forEach((existingRoute) => {
+    Object.keys(routers).forEach((existingRoute) => {
       if (new RegExp(`^${existingRoute}`).test(sanitizedUrl)) {
         route = existingRoute;
       }
@@ -65,7 +65,7 @@ export default async function getHandler(
   const [route, urlParam] = parseUrl(req.url);
 
   if (!route) {
-    return routes.notExist(req, res);
+    return routers.notExist(req, res);
   }
 
   req.params = { id: urlParam };
@@ -74,21 +74,21 @@ export default async function getHandler(
 
   switch (req.method?.toLowerCase()) {
     case "get":
-      routes[route].get(req, res);
+      routers[route].get(req, res);
       break;
     case "post":
       req.body = (await parseContent(req)) as ClientSchema;
-      routes[route].post(req, res);
+      routers[route].post(req, res);
       break;
     case "put":
       req.body = (await parseContent(req)) as ClientSchema;
-      routes[route].put(req, res);
+      routers[route].put(req, res);
       break;
     case "delete":
-      routes[route].delete(req, res);
+      routers[route].delete(req, res);
       break;
     default:
-      return routes.notExist(req, res);
+      return routers.notExist(req, res);
   }
   return "";
 }
