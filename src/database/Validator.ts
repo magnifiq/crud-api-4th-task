@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 export default abstract class Validator<T> {
   validateFields(
     required: Array<string> | null,

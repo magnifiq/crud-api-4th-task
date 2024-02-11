@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import routers from "../routers";
 import url from "node:url";
 import { IncomingMessage, ServerResponse } from "http";

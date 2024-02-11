@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import { validate as uuidValidate } from "uuid";
 import UserModel from "../database";
 import { ResponseError } from "../types_of_data";

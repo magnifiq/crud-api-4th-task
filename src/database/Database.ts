@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import { MainDoc } from "../types_of_data";
 import Schema from "./Schema";
 

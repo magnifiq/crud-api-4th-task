@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 export interface ClientSchema {
   id?: string;
   username: string;

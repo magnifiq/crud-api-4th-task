@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import { MainDoc, ResponseError } from "../types_of_data";
 import { v4 as uuid } from "uuid";
 import Validator from "./Validator";

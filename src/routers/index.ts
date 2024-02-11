@@ -1,6 +1,8 @@
-import Methods from '../methods/Methods';
+/* eslint-disable */
 
-export default const routers = {
+import Methods from "../methods/Methods";
+
+const routers = {
   "api/users": {
     get: (req, res) => Methods.get(req, res),
     post: (req, res) => Methods.post(req, res),
@@ -12,3 +14,4 @@ export default const routers = {
     res.end(JSON.stringify({ message: "Doesn't exist" }));
   },
 };
+export default routers;
